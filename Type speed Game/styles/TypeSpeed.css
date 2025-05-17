@@ -53,6 +53,7 @@ body{
     font-size: 16px;
     border-radius: 5px;
     background: #17a2b8;
+    transition: transfrom 0.3 ease;
 }
 .content .result-details{
     display: flex;
@@ -82,4 +83,8 @@ body{
 }
 .result-details li b{
     font-weight: 500;
+}
+
+.content button:active{
+    transform:scale(0.97) ;
 }
