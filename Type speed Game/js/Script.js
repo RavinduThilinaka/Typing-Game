@@ -14,13 +14,17 @@ function randomParagraph(){
 
 function initTyping(){
     const characters = typingText.querySelectorAll("span");
+
     let typedChar = inputField.value.split("")[charIndex];
+
     if(characters[charIndex].innerText === typedChar){
-       characters[charIndex].classList.add("Correct");
+
+       characters[charIndex].classList.add("correct");
     }else{
-       characters[charIndex].classList.add("Incorrect")
+       characters[charIndex].classList.add("incorrect");
     }
     charIndex++;
+    characters[charIndex].classList.add("active")
 }
 
 randomParagraph();
