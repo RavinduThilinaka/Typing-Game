@@ -36,6 +36,34 @@ body{
     word-break: break-all;
 }
 
+.typing-text p span{
+    position: relative;
+}
+
+.typing-text p span.correct{
+    color: #56964f;
+}
+
+.typing-text p span.incorrect{
+    color: #cb3439;
+    background: #ffc0cb;
+    outline: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.typing-text p span.active{
+    color: #17a2b8;
+}
+
+.typing-text p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #17a2b8;
+}
 .content-box .content{
     display: flex;
     margin-top: 17px;
@@ -53,6 +81,7 @@ body{
     font-size: 16px;
     border-radius: 5px;
     background: #17a2b8;
+    transition: transfrom 0.3 ease;
 }
 .content .result-details{
     display: flex;
@@ -82,4 +111,8 @@ body{
 }
 .result-details li b{
     font-weight: 500;
+}
+
+.content button:active{
+    transform:scale(0.97) ;
 }
