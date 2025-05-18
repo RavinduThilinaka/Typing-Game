@@ -98,5 +98,36 @@ randomParagraph();
 inputField.addEventListener("input",initTyping);
 tryAgainBtn.addEventListener("click",resetGame);
 
+////////////////////////////////////////////////////
+
+// Create particles
+function createParticles() {
+    const colors = ['rgba(255,255,255,0.3)', 'rgba(255,255,255,0.5)', 'rgba(255,255,255,0.7)'];
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        const size = Math.random() * 10 + 5;
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * window.innerHeight;
+        const delay = Math.random() * 5;
+        const duration = Math.random() * 10 + 10;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}px`;
+        particle.style.top = `${posY}px`;
+        particle.style.background = color;
+        particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        
+        document.body.appendChild(particle);
+    }
+}
+
+// Call this function when the page loads
+createParticles();
+
 //wpm cheda ganana
 //cpm correct character ganana
